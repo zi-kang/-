@@ -28,6 +28,27 @@ function isChineseChar(str) {
     var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
     return !reg.test(str);
 }
+//验证姓名，2~7位汉字，对姓氏不做验证
+function IsChinese()        
+{       
+        var str = document.all.realname.value;       
+        
+        reg=/^([\u4e00-\u9fa5]){2,7}$/;       //只能是中文，长度为2-7位
+        if(!reg.test(str)){       
+            alert("对不起，您输入的字符串类型格式不正确!");//请将“字符串类型”要换成你要验证的那个属性名称！       
+       return false;
+	    }       
+
+}
+//验证英文名字
+if(
+/^[a-zA-Z ]{1,20}$/.test(s)
+|| 
+/^[\u4e00-\u9fa5]{1,10}$/.test(s)
+)
+{
+alert(true);
+}
 //同理，是否含有全角符号的函数   
 function isFullwidthChar(str) {
     var reg = /[\uFF00-\uFFEF]/;
