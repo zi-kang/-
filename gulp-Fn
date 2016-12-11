@@ -1,3 +1,13 @@
+gulp-less :less—>css
+gulp-clean-css:  css代码压缩
+gulp-concat:  js代码粘连
+gulp-uglify： js代码压缩
+gulp-connect： 其本地服务器
+gulp-clean： 清除 .js/.css 文件
+gulp-rev：MD5加密
+gulp-inject：.js/.css注入页面，注意前后的两行代码
+gulp-sequence：依赖排序 < cd >
+gulp-cmd-jst：html转换为js函数
 //自动添加前缀，节省编程时间
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
