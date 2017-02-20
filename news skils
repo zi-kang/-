@@ -1,0 +1,4 @@
+1. 构建发布到项目目录的 output 目录下     fis3 release -d ./output
+2.构建发布到项目父级目录的 dist 子目录下  fis3 release -d ../dist
+发布到其他盘 （Windows）   fis3 release -d D:\output
+
