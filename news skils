@@ -2,3 +2,190 @@
 2.构建发布到项目父级目录的 dist 子目录下  fis3 release -d ../dist
 发布到其他盘 （Windows）   fis3 release -d D:\output
 
++- 项目依赖升级
+ 	2
++- @author: jyjin
+ 	3
++- @date: 2017.2.16
+ 	4
++
+ 	5
++####环境要求：
+ 	6
++  ```
+ 	7
++  "node": ">=4.7 <=7.5.0 current: 4.7.3",
+ 	8
++  "npm": "2.15.11",
+ 	9
++  "fis3": "3.4.12"
+ 	10
++  ```
+ 	11
++
+ 	12
++####目录介绍
+ 	13
++
+ 	14
++- src：中文站源码
+ 	15
++- pack：中文站发布源码[发布方式见项目启动]
+ 	16
++- src-en：英文站源码
+ 	17
++- pack-en：英文站源码[发布方式见项目启动]
+ 	18
++
+ 	19
++###1.项目启动
+ 	20
++
+ 	21
++1. init [初始化项目环境]
+ 	22
++
+ 	23
++   ```
+ 	24
++   npm install
+ 	25
++   ```
+ 	26
++    或者
+ 	27
++
+ 	28
++   ```
+ 	29
++   npm run init
+ 	30
++   ```
+ 	31
++
+ 	32
++   _注意：_ 建议全局装下`grunt-cli` `webpack` `webpack-dev-server` `tmodjs@1.0.3` `fis3` 装过一次就行了，其他项目用得到，避免重复安装
+ 	33
++
+ 	34
++2. run development [开发环境运行]
+ 	35
++   ```
+ 	36
++    npm run dev
+ 	37
++   ```
+ 	38
++
+ 	39
++3. release the project [项目发布]
+ 	40
++   ```
+ 	41
++   npm run release
+ 	42
++   ```
+ 	43
++   required `npm run dev` first
+ 	44
++
+ 	45
++##2.常见问题：
+ 	46
++   ###1.找不到grunt命令
+ 	47
++
+ 	48
++   安装全局grunt环境
+ 	49
++   ```
+ 	50
++     npm install grunt-cli -g
+ 	51
++   ```
+ 	52
++
+ 	53
++   ###2.unable to find local grunt XXX
+ 	54
++   将最新版grunt安装到项目目录
+ 	55
++   ```
+ 	56
++     npm install grunt --save-dev
+ 	57
++   ```
+ 	58
++
+ 	59
++   ###3.找不到tmod命令
+ 	60
++
+ 	61
++   ```
+ 	62
++     npm install tmodjs@1.0.3 -g
+ 	63
++   ```
+ 	64
++
+ 	65
++   ###4.tmod编译报错，提示升级tmodjs
+ 	66
++
+ 	67
++   检查`tpl`文件夹下，`pacage.json`中`tmodjs`版本号是否和根目录`package.json`中的一致
+ 	68
++
+ 	69
++
+ 	70
++
+ 	71
++   >a1.修改两个 `package.json` 版本号到1.0.4，重新 `npm install`，或者采用`a2`方法[建议a2方法]
+ 	72
++
+ 	73
++   >a2.
+ 	74
++
+ 	75
++      step1:修改`tpl` 文件夹下`package.json`的`tmodjs`至1.0.3
+ 	76
++
+ 	77
++      step2:全局安装1.0.3版本
+ 	78
++   ```
+ 	79
++   npm uninstall tmodjs -g
+ 	80
++
+ 	81
++   npm install tmodjs@1.0.3 -g
+ 	82
++   ```
+ 	83
++
+ 	84
++   ###4.找不到fis3命令
+ 	85
++
+ 	86
++   ```
+ 	87
++   npm install fis3 -g
+ 	88
++   ```
+ 	89
++
+ 	90
++  ###5.unable to load plugin [fis3-postpackager-loader] or [fis-postpackager-loader]
+ 	91
++
+ 	92
++   ```
+ 	93
++   npm install fis3-postpackager-loader -g
+ 	94
++   ```
