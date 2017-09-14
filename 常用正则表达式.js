@@ -23,6 +23,11 @@ function IsZip(v) {
 function Isint(v) {
     return IsValid(/^[0-9]*$/, v);
 }
+//非负数
+function Isint(v) {
+    return IsValid(/^[1-9]\d*(\.\d+)?$/, v);
+}
+
 //是否含有中文（也包含日文和韩文）   
 function isChineseChar(str) {
     var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
